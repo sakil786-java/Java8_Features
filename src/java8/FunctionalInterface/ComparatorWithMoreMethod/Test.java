@@ -27,7 +27,10 @@ public class Test {
         //sort by age then name length
         List<Employee> sortedByAgeThenNameLength = employeeList.stream().sorted(Comparator.comparing(Employee::getAge).thenComparing((x, y) -> y.getName().length() - x.getName().length())).collect(Collectors.toList());
         System.out.println(sortedByAgeThenNameLength);
-
+        //Sort by age then department name
+        List<Employee> sorthByAgeThenDepartmentName = employeeList.stream().sorted(Comparator.comparingInt(Employee::getAge).thenComparing(Employee::getDepartment)).collect(Collectors.toList());
+        System.out.println("--");
+        System.out.println(sorthByAgeThenDepartmentName);
         //Custom Object Filters:
         //Filter employees based on multiple criteria (e.g., age > 25 and name length start with K ).
 
